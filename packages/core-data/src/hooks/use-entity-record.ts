@@ -33,7 +33,6 @@ interface Options {
  * @param  kind     Kind of the requested entity.
  * @param  name     Name of the requested  entity.
  * @param  recordId Record ID of the requested entity.
- *
  * @param  options
  * @example
  * ```js
