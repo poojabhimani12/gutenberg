@@ -69,7 +69,7 @@ class WP_Webfonts {
 	 * @return array
 	 */
 	public function get_registered_fonts() {
-		return self::$registered_webfonts;
+		return $this->registered_webfonts;
 	}
 
 	/**
@@ -104,7 +104,7 @@ class WP_Webfonts {
 
 		$font = $this->validate_font( $font );
 		if ( $font ) {
-			self::$registered_webfonts[ $id ] = $font;
+			$this->registered_webfonts[ $id ] = $font;
 		}
 	}
 
@@ -124,13 +124,13 @@ class WP_Webfonts {
 			$font                           = $this->validate_font( $font );
 			self::$enqueued_webfonts[ $id ] = $font;
 
-			if ( isset( self::$registered_webfonts[ $id ] ) ) {
-				unset( self::$registered_webfonts[ $id ] );
+			if ( isset( $this->registered_webfonts[ $id ] ) ) {
+				unset( $this->registered_webfonts[ $id ] );
 			}
-		} elseif ( isset( self::$registered_webfonts[ $id ] ) ) {
-			self::$enqueued_webfonts[ $id ] = self::$registered_webfonts[ $id ];
+		} elseif ( isset( $this->registered_webfonts[ $id ] ) ) {
+			self::$enqueued_webfonts[ $id ] = $this->registered_webfonts[ $id ];
 
-			unset( self::$registered_webfonts[ $id ] );
+			unset( $this->registered_webfonts[ $id ] );
 		} else {
 			trigger_error( __( 'The given webfont ID is not registered, therefore the webfont cannot be enqueued.', 'gutenberg' ) );
 		}
