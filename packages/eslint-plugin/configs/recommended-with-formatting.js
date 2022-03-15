@@ -50,6 +50,7 @@ if ( isPackageInstalled( 'jest' ) ) {
 	config.overrides.push( {
 		// Unit test files and their helpers only.
 		files: [ '**/@(test|__tests__)/**/*.js', '**/?(*.)test.js' ],
+		excludedFiles: [ 'test/e2e/**/*.js' ],
 		extends: [ require.resolve( './test-unit.js' ) ],
 	} );
 }

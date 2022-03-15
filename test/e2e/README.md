@@ -2,21 +2,13 @@
 
 End-To-End (E2E) tests for WordPress.
 
-## Installation
-
-Install the module
-
-```bash
-npm install @wordpress/e2e-tests-playwright --save-dev
-```
-
 ## Running tests
 
 The following command is available on the Gutenberg repo:
 
 ```json
 {
-	"test-e2e:playwright": "playwright test --config packages/e2e-tests-playwright/playwright.config.ts"
+	"test-e2e:playwright": "playwright test --config test/e2e/playwright.config.ts"
 }
 ```
 

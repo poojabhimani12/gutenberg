@@ -240,7 +240,7 @@ module.exports = {
 		},
 		{
 			files: [
-				'packages/e2e-tests-playwright/**/*.[tj]s',
+				'test/e2e/**/*.[tj]s',
 				'packages/e2e-test-utils-playwright/**/*.[tj]s',
 			],
 			extends: [ 'plugin:@wordpress/eslint-plugin/test-e2e-playwright' ],
