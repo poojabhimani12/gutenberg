@@ -225,7 +225,8 @@ module.exports = {
 			},
 		},
 		{
-			files: [ 'packages/jest*/**/*.js' ],
+			files: [ 'packages/jest*/**/*.js', '**/test/**/*.js' ],
+			excludedFiles: [ 'test/e2e/**/*.js' ],
 			extends: [ 'plugin:@wordpress/eslint-plugin/test-unit' ],
 		},
 		{
@@ -234,9 +235,6 @@ module.exports = {
 				'packages/e2e-test-utils/**/*.js',
 			],
 			extends: [ 'plugin:@wordpress/eslint-plugin/test-e2e' ],
-			rules: {
-				'jest/expect-expect': 'off',
-			},
 		},
 		{
 			files: [
