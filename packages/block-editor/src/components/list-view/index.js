@@ -59,6 +59,7 @@ export const BLOCK_LIST_ITEM_HEIGHT = 36;
  * @param {boolean} props.__experimentalFeatures                   Flag to enable experimental features.
  * @param {boolean} props.__experimentalPersistentListViewFeatures Flag to enable features for the Persistent List View experiment.
  * @param {boolean} props.__experimentalHideContainerBlockActions  Flag to hide actions of top level blocks (like core/widget-area)
+ * @param {boolean} props.expandNested                             Flag to determine whether nested levels are expanded by default.
  * @param {Object}  ref                                            Forwarded ref
  */
 function ListView(
@@ -69,6 +70,7 @@ function ListView(
 		__experimentalHideContainerBlockActions,
 		showNestedBlocks,
 		showBlockMovers,
+		expandNested,
 		...props
 	},
 	ref
@@ -220,6 +222,7 @@ function ListView(
 						showBlockMovers={ showBlockMovers }
 						fixedListWindow={ fixedListWindow }
 						selectedClientIds={ selectedClientIds }
+						expandNested={ expandNested }
 						{ ...props }
 					/>
 				</ListViewContext.Provider>
